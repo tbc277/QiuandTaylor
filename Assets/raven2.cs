@@ -47,6 +47,7 @@ public class raven2 : MonoBehaviour {
 		cam = GameObject.Find ("Main Camera");
 		camera = cam.GetComponent<Camera>();
 
+		sr_room.color = color2;
 
 		t = 0f;
 	}
