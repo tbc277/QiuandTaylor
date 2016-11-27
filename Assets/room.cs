@@ -24,7 +24,7 @@ public class room : MonoBehaviour {
 			isAddRigidbody_c3 = true;
 		}
 
-		//need to add a 
+		//need to add a obstacle
 	
 	}
 
