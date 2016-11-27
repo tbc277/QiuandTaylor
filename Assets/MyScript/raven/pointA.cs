@@ -15,6 +15,7 @@ public class pointA : MonoBehaviour {
 
 	Animator ani_sun;
 
+	GameObject lines;
 
 	void Start () 
 	{
@@ -28,13 +29,13 @@ public class pointA : MonoBehaviour {
 
 		ani_sun = sun.GetComponent<Animator> ();
 
-
+		lines = GameObject.Find ("lines");
 	}
 	
 
 	void Update () 
 	{
-
+		//Debug.Log (lines);
 		//Debug.Log ("Tsun: "+Tsun.position);
 		//V3_raven1.x = raven1.transform.position.x ;
 
@@ -69,6 +70,7 @@ public class pointA : MonoBehaviour {
 		//raven1.transform.position = V3_raven1;
 
 		isCollidePointA = true;
+		lines.SendMessage ("lineWhenPointA");
 	
 	}
 

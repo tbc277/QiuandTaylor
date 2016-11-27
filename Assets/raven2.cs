@@ -15,7 +15,7 @@ public class raven2 : MonoBehaviour {
 	float timeCounter;
 	float currentTime;
 
-	bool is25;
+	bool is35;
 
 	SpriteRenderer sr_room;
 	SpriteRenderer sr_raven2;
@@ -26,6 +26,9 @@ public class raven2 : MonoBehaviour {
 	Camera camera;
 	GameObject cam;
 	float t;
+
+	GameObject raven_3;
+
 
 	void Start () {
 
@@ -42,7 +45,7 @@ public class raven2 : MonoBehaviour {
 		sr_room = room.GetComponent<SpriteRenderer> ();
 		sr_raven2 = this.GetComponent<SpriteRenderer> ();
 
-		is25 = false;
+		is35 = false;
 
 		cam = GameObject.Find ("Main Camera");
 		camera = cam.GetComponent<Camera>();
@@ -50,6 +53,9 @@ public class raven2 : MonoBehaviour {
 		sr_room.color = color2;
 
 		t = 0f;
+
+		raven_3 = GameObject.Find ("raven3");
+
 	}
 	
 
@@ -72,7 +78,7 @@ public class raven2 : MonoBehaviour {
 			//this.gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0);
 		}
 
-		if (this.gameObject.transform.localScale.x == 25.0f  && !is25) 
+		if (this.gameObject.transform.localScale.x == 35.0f  && !is35) 
 		{
 			currentTime = timeCounter;
 			//Debug.Log ("reach the max point");
@@ -81,10 +87,10 @@ public class raven2 : MonoBehaviour {
 			//Destroy (room);
 			sr_room.enabled = false;
 
-			is25 = true;
+			is35 = true;
 		}
 
-		if ((timeCounter - currentTime) > 3.0f && is25)
+		if ((timeCounter - currentTime) > 3.0f && is35)
 		{
 
 
@@ -93,12 +99,15 @@ public class raven2 : MonoBehaviour {
 		   //Destroy (gameObject);
 		}
 
-		if ((timeCounter - currentTime) > 7.0f && is25)
+		if ((timeCounter - currentTime) > 7.0f && is35)
 		{
 		//room become white
 			Debug.Log("greater than 7");
+			sr_room.enabled = true;
 			sr_room.color = new Color(0f, 0f, 0f, 255f);
 
+			rb_ball.isKinematic = false;
+			ball.transform.position = new Vector3 (113.0f, -12.0f, 0);
 
 			if (t <= 1.0f)
 			{
@@ -107,6 +116,15 @@ public class raven2 : MonoBehaviour {
 		
 			camera.backgroundColor = Color.Lerp(color1, color2, t);
 			//camera.backgroundColor = color2;
+
+			raven_3.SendMessage ("appear");
+
+
+		}
+
+		if ((timeCounter - currentTime) > 11.0f && is35) 
+		{
+			Destroy (gameObject);
 		}
 	}
 
