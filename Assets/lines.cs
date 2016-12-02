@@ -35,7 +35,7 @@ public class lines : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		Debug.Log ("blank text " + Mathf.Abs (currentTime2 - timeCounter));
+		//Debug.Log ("blank text " + Mathf.Abs (currentTime2 - timeCounter));
 		timeCounter += Time.deltaTime;
 		//Debug.Log ("timenow: " + timeCounter);
 	
