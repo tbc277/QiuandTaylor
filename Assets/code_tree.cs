@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class tree : MonoBehaviour {
+public class code_tree : MonoBehaviour {
 
 	Animator ani_treeGrow;
 
@@ -31,6 +31,8 @@ public class tree : MonoBehaviour {
 	SpriteRenderer sr_ball;
 	SpriteRenderer sr_raven2;
     // need a terre
+
+	public bool isRaven2cloneStart;
 
 	void Start () 
 	{
@@ -70,6 +72,8 @@ public class tree : MonoBehaviour {
 		sr_raven2 = raven2.GetComponent<SpriteRenderer> ();
 		sr_room = room.GetComponent<SpriteRenderer> ();
 		sr_ball = ball.GetComponent<SpriteRenderer> ();
+
+		isRaven2cloneStart = true;
 	}
 
 	void Update ()
@@ -101,6 +105,8 @@ public class tree : MonoBehaviour {
 			sr_raven2.color = Color.white;// may still change the color
 			sr_room.color = Color.white;
 			sr_ball.color = Color.white;
+
+			isRaven2cloneStart = true;
 		}
 	}
 

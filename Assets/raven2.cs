@@ -50,7 +50,7 @@ public class raven2 : MonoBehaviour {
 		cam = GameObject.Find ("Main Camera");
 		camera = cam.GetComponent<Camera>();
 
-		sr_room.color = color2;
+		sr_room.color = color2; // Color.black
 
 		t = 0f;
 
@@ -125,7 +125,9 @@ public class raven2 : MonoBehaviour {
 		if ((timeCounter - currentTime) > 11.0f && is35) 
 		{
 			Destroy (gameObject);
+			//sr_raven2.enabled = false;
 		}
+
 	}
 
 	void OnCollisionEnter2D()
