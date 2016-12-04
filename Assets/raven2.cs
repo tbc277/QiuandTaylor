@@ -29,6 +29,11 @@ public class raven2 : MonoBehaviour {
 
 	GameObject raven_3;
 
+	GameObject ltree;
+	GameObject ptree;
+
+	bool isGenerateTree;
+
 
 	void Start () {
 
@@ -55,6 +60,9 @@ public class raven2 : MonoBehaviour {
 		t = 0f;
 
 		raven_3 = GameObject.Find ("raven3");
+
+		ltree = GameObject.Find ("tree");
+		isGenerateTree = false;
 
 	}
 	
@@ -122,6 +130,19 @@ public class raven2 : MonoBehaviour {
 
 		}
 
+		if ((timeCounter - currentTime) > 8.0f && is35)
+		{
+			if (!isGenerateTree) 
+			{
+				ptree = Instantiate (Resources.Load ("tree")) as GameObject;
+				ptree.transform.position = new Vector3 (113.0f, -15.16f, 0);
+				isGenerateTree = true;
+			}
+
+			ltree.SendMessage ("treeGrow");
+			//Debug.Log ("tree grow");
+		}
+
 		if ((timeCounter - currentTime) > 11.0f && is35) 
 		{
 			Destroy (gameObject);
@@ -145,4 +166,6 @@ public class raven2 : MonoBehaviour {
 
 		// say some word "depressed".
 	}
+
+
 }

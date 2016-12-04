@@ -42,7 +42,7 @@ public class raven3 : MonoBehaviour {
 	void appear ()
 	{
 		Debug.Log ("raven3 on the stage");
-		sr_raven3.enabled = true;
+		//sr_raven3.enabled = true;
 		sr_ball.color = color1;
 
 		sr_eye1.color = Color.black;
