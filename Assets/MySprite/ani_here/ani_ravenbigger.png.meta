@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: 96542494515fe4603b34f77bab73847b
+timeCreated: 1480890188
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ani_ravenbigger_0
+    21300002: ani_ravenbigger_1
+    21300004: ani_ravenbigger_2
+    21300006: ani_ravenbigger_3
+    21300008: ani_ravenbigger_4
+    21300010: ani_ravenbigger_5
+    21300012: ani_ravenbigger_6
+    21300014: ani_ravenbigger_7
+    21300016: ani_ravenbigger_8
+    21300018: ani_ravenbigger_9
+    21300020: ani_ravenbigger_10
+    21300022: ani_ravenbigger_11
+    21300024: ani_ravenbigger_12
+    21300026: ani_ravenbigger_13
+    21300028: ani_ravenbigger_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ani_ravenbigger_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1203.3333
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1203.3333
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1203.3333
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_3
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1203.3333
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_4
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1203.3333
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 602.3333
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 602.3333
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_7
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 602.3333
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_8
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 602.3333
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_9
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 602.3333
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.333313
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_11
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1.333313
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1.333313
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_13
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1.333313
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ani_ravenbigger_14
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1.333313
+        width: 600
+        height: 601.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

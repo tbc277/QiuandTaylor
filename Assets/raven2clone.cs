@@ -39,6 +39,8 @@ public class raven2clone : MonoBehaviour {
 	bool cloud3_loop1;
 	bool cloud3_loop2;
 
+	GameObject lmark1;
+
 	void Start () 
 	{
 		
@@ -70,6 +72,9 @@ public class raven2clone : MonoBehaviour {
 		cloud2_loop2 = false;
 		cloud3_loop1 = true;
 		cloud3_loop2 = false;
+
+		lmark1 = GameObject.Find ("mark1");
+
 	}
 	
 
@@ -91,7 +96,11 @@ public class raven2clone : MonoBehaviour {
 			speed_raven = speed_raven + 0.05f;
 
 			//if the player get that point， use kevin's coding: when reaching this area, three clouds begin to move throu the player
-			if (Mathf.Abs(lball.transform.position.x - this.transform.position.x) < 100.0f)
+
+			//if (Mathf.Abs(lball.transform.position.x - this.transform.position.x) < 100.0f)
+
+			if (lball.transform.position.x >= lpuzzleBpoint1.transform.position.x 
+				&& lball.transform.position.x <= lpuzzleBpoint2.transform.position.x )
 			{
 
 				//Debug.Log ("ball.x:" + lball.transform.position.x +" raven2clone.x: " + this.transform.position.x );
@@ -109,16 +118,19 @@ public class raven2clone : MonoBehaviour {
 							//lcloud1.transform.position.y = cloud1_y; 
 							lcloud1.transform.position = new Vector3 (cloud1_x, lcloud1.transform.position.y, 0);  // move to the right
 
-//							if ( Input.GetKey (KeyCode.LeftArrow) )
-//							{
+							if ( Input.GetKey (KeyCode.LeftArrow) )
+							{
 //								cloud1_x2 = cloud1_x2 - 0.05f;
 //								lcloud1.transform.position = new Vector3 (cloud1_x2, lcloud1.transform.position.y, 0);  
 //								Debug.Log ("cloud1_x2: " +cloud1_x2);
-//							}
+								Debug.Log("press left");
+								cloud1_loop2 = true;
+								cloud1_loop1 = false;
+							}
 
 							if (lcloud1.transform.position.x >= lpuzzleBpoint2.transform.position.x) 
 							{
-								Debug.Log ("1-2");
+								//Debug.Log ("1-2");
 //							cloud1_x = cloud1_x - 0.05f;
 //							lcloud1.transform.position = new Vector3 (cloud1_x, lcloud1.transform.position.y, 0); 
 								cloud1_loop2 = true;
@@ -136,15 +148,18 @@ public class raven2clone : MonoBehaviour {
 							lcloud1.transform.position = new Vector3 (cloud1_x, lcloud1.transform.position.y, 0); 
 
 
-//							if ( Input.GetKey (KeyCode.LeftArrow) )
-//							{
+							if ( Input.GetKey (KeyCode.LeftArrow) )
+							{
 //								cloud1_x2 = cloud1_x2 + 0.05f;
 //								lcloud1.transform.position = new Vector3 (cloud1_x2, lcloud1.transform.position.y, 0);  
 //								Debug.Log ("cloud1_x2: " +cloud1_x2);
-//							}
+								Debug.Log("press left");
+								cloud1_loop2 = false;
+								cloud1_loop1 = true;
+							}
 
 							if (lcloud1.transform.position.x <= lpuzzleBpoint1.transform.position.x) {
-								Debug.Log ("2-2");
+								//Debug.Log ("2-2");
 //							cloud1_x = cloud1_x + 0.05f;		
 //							lcloud1.transform.position = new Vector3 (cloud1_x, lcloud1.transform.position.y, 0);  // move to the right
 								cloud1_loop2 = false;
@@ -157,13 +172,13 @@ public class raven2clone : MonoBehaviour {
 					{
 						if (lcloud2.transform.position.x <= lpuzzleBpoint1.transform.position.x || lcloud2.transform.position.x <= lpuzzleBpoint2.transform.position.x) 
 						{
-							Debug.Log ("1");
+							//Debug.Log ("1");
 							cloud2_x = cloud2_x + 0.05f;
 							//lcloud1.transform.position.y = cloud1_y; 
 							lcloud2.transform.position = new Vector3 (cloud2_x, lcloud2.transform.position.y, 0);  // move to the right
 
 							if (lcloud2.transform.position.x >= lpuzzleBpoint2.transform.position.x) {
-								Debug.Log ("1-2");
+								//Debug.Log ("1-2");
 								//							cloud1_x = cloud1_x - 0.05f;
 								//							lcloud1.transform.position = new Vector3 (cloud1_x, lcloud1.transform.position.y, 0); 
 								cloud2_loop2 = true;
@@ -180,7 +195,7 @@ public class raven2clone : MonoBehaviour {
 							lcloud2.transform.position = new Vector3 (cloud2_x, lcloud2.transform.position.y, 0); 
 
 							if (lcloud2.transform.position.x <= lpuzzleBpoint1.transform.position.x) {
-								Debug.Log ("2-2");
+								//Debug.Log ("2-2");
 								//							cloud1_x = cloud1_x + 0.05f;		
 								//							lcloud1.transform.position = new Vector3 (cloud1_x, lcloud1.transform.position.y, 0);  // move to the right
 								cloud2_loop2 = false;
@@ -218,7 +233,7 @@ public class raven2clone : MonoBehaviour {
 							lcloud3.transform.position = new Vector3 (cloud3_x, lcloud3.transform.position.y, 0); 
 
 							if (lcloud3.transform.position.x <= lpuzzleBpoint1.transform.position.x) {
-								Debug.Log ("2-2");
+								//Debug.Log ("2-2");
 								//							cloud1_x = cloud1_x + 0.05f;		
 								//							lcloud1.transform.position = new Vector3 (cloud1_x, lcloud1.transform.position.y, 0);  // move to the right
 								cloud3_loop2 = false;
@@ -345,7 +360,18 @@ public class raven2clone : MonoBehaviour {
 
 
 		}
+			Debug.Log ("1: " + lcloud1.transform.position.x + "2: " +lcloud2.transform.position.x +"3:"+lcloud3.transform.position.x);
 
+			//judge whether the player find the raven
+			if (lcloud1.transform.position.x >150.0f && lcloud1.transform.position.x < 172.0f  
+				&& lcloud2.transform.position.x > 155.47f  && lcloud2.transform.position.x < 170.0f
+				&& lcloud3.transform.position.x > 150.0f && lcloud3.transform.position.x < 166.5f )
+			{
+				Debug.Log ("Bridge puzzle solved!");
+				//run to the mark1 automatically
+				lball.transform.position = Vector3.MoveTowards(lball.transform.position, lmark1.transform.position, 4.0f * Time.deltaTime);
+			
+			}
 
 
 	}

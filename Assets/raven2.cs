@@ -33,6 +33,7 @@ public class raven2 : MonoBehaviour {
 	GameObject ptree;
 
 	bool isGenerateTree;
+	bool isBiggerEnough;
 
 
 	void Start () {
@@ -64,6 +65,8 @@ public class raven2 : MonoBehaviour {
 		ltree = GameObject.Find ("tree");
 		isGenerateTree = false;
 
+		isBiggerEnough = false;
+
 	}
 	
 
@@ -86,7 +89,7 @@ public class raven2 : MonoBehaviour {
 			//this.gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0);
 		}
 
-		if (this.gameObject.transform.localScale.x == 35.0f  && !is35) 
+		if (isBiggerEnough  && !is35) 
 		{
 			currentTime = timeCounter;
 			//Debug.Log ("reach the max point");
@@ -165,6 +168,11 @@ public class raven2 : MonoBehaviour {
 		rb_ball.isKinematic = true;
 
 		// say some word "depressed".
+	}
+
+	void whenBiggerEnough()
+	{
+		isBiggerEnough = true;
 	}
 
 

@@ -52,6 +52,13 @@ public class code_tree : MonoBehaviour {
 	GameObject c2;
 	GameObject c3;
 
+	GameObject lflyraven;
+	Animator ani_flyraven;
+	SpriteRenderer sr_flayraven;
+
+	float step;
+	GameObject lmark1;
+
 	void Start () 
 	{
 		
@@ -106,6 +113,14 @@ public class code_tree : MonoBehaviour {
 		c2 = GameObject.Find ("c2");
 		c3 = GameObject.Find ("c3");
 		//Debug.Log (c1);
+
+		lflyraven = GameObject.Find ("flyaniraven");
+		ani_flyraven = lflyraven.GetComponent<Animator> ();
+		sr_flayraven = lflyraven.GetComponent<SpriteRenderer> ();
+		sr_flayraven.enabled = false;
+
+		lmark1 = GameObject.Find ("mark1");
+
 	}
 
 	void Update ()
@@ -143,6 +158,11 @@ public class code_tree : MonoBehaviour {
 			camera.backgroundColor = Color.Lerp(Color.white, Color.black, t);
 			rb_ball.isKinematic = false;
 
+			sr_flayraven.enabled = true;
+			ani_flyraven.SetTrigger ("flyraven");
+			step = 5.0f * Time.deltaTime;
+			lflyraven.transform.position = Vector3.MoveTowards(lflyraven.transform.position, lmark1.transform.position, step);
+
 			//Destroy (shadowtear);
 			sr_shadowtear.enabled = false;
 			Destroy (c2);
@@ -153,10 +173,7 @@ public class code_tree : MonoBehaviour {
 			sr_raven2.color = Color.white;// may still change the color
 			sr_room.color = Color.white;
 			sr_ball.color = Color.black;
-
 			// add an animation of raven fly away!
-
-
 		}
 
 //tears come!!
