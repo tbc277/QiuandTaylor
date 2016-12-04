@@ -14,7 +14,7 @@ public class code_tree : MonoBehaviour {
 
 	//bool isTearTouchwithBall;
 
-	float startShadowTear_y;
+	float startShadowTear_localy;
 	float currentShadowTear_y;
 
 	Camera camera;
@@ -46,6 +46,12 @@ public class code_tree : MonoBehaviour {
 
 	float lengthRole;
 
+	float shadowtearloacal_y;
+
+	GameObject c1;
+	GameObject c2;
+	GameObject c3;
+
 	void Start () 
 	{
 		
@@ -65,11 +71,11 @@ public class code_tree : MonoBehaviour {
 
 		//isTearTouchwithBall = false;
 
-		startShadowTear_y = shadowtear.transform.position.y;
+		startShadowTear_localy = shadowtear.transform.localPosition.y;
 		//Debug.Log ("v3: "+ startV3ShadowTear);
 
 		currentShadowTear_y = 10.0f; 
-		lengthRole = 7.0f;// equals the length of the role;
+		lengthRole = 0.5f;// equals the length of the role;
 
 		cam = GameObject.Find ("Main Camera");
 		camera = cam.GetComponent<Camera>();
@@ -84,7 +90,7 @@ public class code_tree : MonoBehaviour {
 		sr_room = room.GetComponent<SpriteRenderer> ();
 		sr_ball = ball.GetComponent<SpriteRenderer> ();
 
-		isRaven2cloneStart = true;
+		isRaven2cloneStart = false;
 
 		isFirstTearDrop = false;
 
@@ -96,6 +102,10 @@ public class code_tree : MonoBehaviour {
 
 		t = 0f;
 
+		c1 = GameObject.Find ("c1");
+		c2 = GameObject.Find ("c2");
+		c3 = GameObject.Find ("c3");
+		//Debug.Log (c1);
 	}
 
 	void Update ()
@@ -108,6 +118,8 @@ public class code_tree : MonoBehaviour {
 		timeCounter += Time.deltaTime;
 
 		shadowtear_y = shadowtear.transform.position.y;
+
+		shadowtearloacal_y = shadowtear.transform.localPosition.y;
 		//Debug.Log ("y: " +shadowtear.transform.position.y);
 		//Debug.Log("shadowtear_y: " + shadowtear_y);
 
@@ -115,15 +127,15 @@ public class code_tree : MonoBehaviour {
 //		{
 //			shadowtear_y  = shadowtear_y  + 10.0f;
 //		}
-
+		Debug.Log( "distance: "+ shadowtearloacal_y +" - " +startShadowTear_localy);
 // to judge if the person is filled wth empty
-		if ( Mathf.Abs (shadowtear_y - startShadowTear_y) < lengthRole  && isTearHitBall)
+		if ( Mathf.Abs (shadowtearloacal_y - startShadowTear_localy) > lengthRole  && isTearHitBall)
 		{
 			// all colors reverse, prepare for another scene
 			//Camera, role, room, terre, player cannot move now
 			//sr_room.color = Color.black;
 			Debug.Log("move to puzzle 3");
-			if (t <= 1.0f)
+			if (t <= 2.0f)
 			{
 				t += 0.05f;
 			}
@@ -131,12 +143,20 @@ public class code_tree : MonoBehaviour {
 			camera.backgroundColor = Color.Lerp(Color.white, Color.black, t);
 			rb_ball.isKinematic = false;
 
+			//Destroy (shadowtear);
+			sr_shadowtear.enabled = false;
+			Destroy (c2);
+
+			isRaven2cloneStart = true;
+
 			sr_raven2.enabled = true;
 			sr_raven2.color = Color.white;// may still change the color
 			sr_room.color = Color.white;
-			sr_ball.color = Color.white;
+			sr_ball.color = Color.black;
 
-			isRaven2cloneStart = true;
+			// add an animation of raven fly away!
+
+
 		}
 
 //tears come!!

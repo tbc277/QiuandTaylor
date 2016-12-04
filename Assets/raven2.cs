@@ -134,8 +134,8 @@ public class raven2 : MonoBehaviour {
 		{
 			if (!isGenerateTree) 
 			{
-				ptree = Instantiate (Resources.Load ("tree")) as GameObject;
-				ptree.transform.position = new Vector3 (113.0f, -15.16f, 0);
+//				ptree = Instantiate (Resources.Load ("tree")) as GameObject;
+//				ptree.transform.position = new Vector3 (113.0f, -15.16f, 0);
 				isGenerateTree = true;
 			}
 
