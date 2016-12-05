@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0c195cedd7277408298a9b22f6bf1c73
+timeCreated: 1480910156
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Black Olives
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ecf7721a82a7b405ebd11bdcf40b6547, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
