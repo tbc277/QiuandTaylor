@@ -7,11 +7,14 @@ public class CmeraFollow : MonoBehaviour {
 
 	public Vector2 bias;
 	// Use this for initialization
+	float cam_y;
+
 	void Start () {
-	
+		
 	}
-	
-	// Update is called once per frame
+
+
+
 	void FixedUpdate () {
 		FollowPlayer ();
 	}
@@ -19,7 +22,7 @@ public class CmeraFollow : MonoBehaviour {
 	void FollowPlayer()
 	{
 		transform.position = Vector3.Lerp (transform.position, new Vector3(player.transform.position.x+bias.x, 
-																			player.transform.position.y+bias.y, transform.position.z), 
+																			this.transform.position.y, transform.position.z), 
 																			Time.deltaTime * followSpeed);
 	}
 }

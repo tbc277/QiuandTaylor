@@ -9,7 +9,14 @@ public class door : MonoBehaviour {
 	GameObject raven2;
 	SpriteRenderer sp_raven2;
 
+	GameObject terre_1;
+	SpriteRenderer sr_terre_1;
 
+	GameObject terre_2;
+	SpriteRenderer sr_terre_2;
+
+	GameObject terre_3;
+	SpriteRenderer sr_terre_3;
 
 	void Start () {
 
@@ -22,6 +29,15 @@ public class door : MonoBehaviour {
 		//Debug.Log (girl);
 		sp_girl.enabled = false;
 		sp_raven2.enabled = false;
+
+		terre_1 = GameObject.Find ("terre_1");
+		sr_terre_1 = terre_1.GetComponent<SpriteRenderer> ();
+
+		terre_2 = GameObject.Find ("terre_2");
+		sr_terre_2 = terre_2.GetComponent<SpriteRenderer> ();
+
+		terre_3 = GameObject.Find ("terre_3");
+		sr_terre_3 = terre_3.GetComponent<SpriteRenderer> ();
 
 
 	}
@@ -38,6 +54,10 @@ public class door : MonoBehaviour {
 		// the raven and a girl appear in the room
 		sp_girl.enabled = true;
 		sp_raven2.enabled = true;
+
+		sr_terre_1.color = Color.black;
+		sr_terre_2.color = Color.black;
+		sr_terre_3.color = Color.black;
 
 		//destroy itself
 		Destroy (gameObject);

@@ -35,6 +35,19 @@ public class raven2 : MonoBehaviour {
 	bool isGenerateTree;
 	bool isBiggerEnough;
 
+	GameObject terre_1;
+	SpriteRenderer sr_terre_1;
+	GameObject terre_2;
+	SpriteRenderer sr_terre_2;
+	GameObject terre_3;
+	SpriteRenderer sr_terre_3;
+	GameObject o1;
+	SpriteRenderer sr_o1;
+	GameObject o2;
+	SpriteRenderer sr_o2;
+	GameObject o3;
+	SpriteRenderer sr_o3;
+
 
 	void Start () {
 
@@ -66,6 +79,20 @@ public class raven2 : MonoBehaviour {
 		isGenerateTree = false;
 
 		isBiggerEnough = false;
+
+		terre_1 = GameObject.Find ("terre_1");
+		sr_terre_1 = terre_1.GetComponent<SpriteRenderer> ();
+		terre_2 = GameObject.Find ("terre_2");
+		sr_terre_2= terre_2.GetComponent<SpriteRenderer> ();
+		terre_3 = GameObject.Find ("terre_2");
+		sr_terre_3= terre_3.GetComponent<SpriteRenderer> ();
+
+		o1 = GameObject.Find ("o1");
+		sr_o1= o1.GetComponent<SpriteRenderer> ();
+		o2 = GameObject.Find ("o2");
+		sr_o2= o2.GetComponent<SpriteRenderer> ();
+		o3 = GameObject.Find ("o3");
+		sr_o3= o3.GetComponent<SpriteRenderer> ();
 
 	}
 	
@@ -116,6 +143,7 @@ public class raven2 : MonoBehaviour {
 			Debug.Log("greater than 7");
 			sr_room.enabled = true;
 			sr_room.color = new Color(0f, 0f, 0f, 255f);
+
 
 			rb_ball.isKinematic = false;
 			ball.transform.position = new Vector3 (113.0f, -12.0f, 0);
