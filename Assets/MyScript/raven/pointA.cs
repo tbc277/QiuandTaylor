@@ -19,6 +19,10 @@ public class pointA : MonoBehaviour {
 
 	Animator ani_raven1;
 
+	public AudioClip au_22;
+
+	private AudioSource source;
+
 	void Start () 
 	{
 		sun = GameObject.Find ("sun");
@@ -33,6 +37,8 @@ public class pointA : MonoBehaviour {
 		ani_raven1 = raven1.GetComponent<Animator> ();
 
 		lines = GameObject.Find ("lines");
+
+		source = this.GetComponent<AudioSource> ();
 	}
 	
 
@@ -75,6 +81,8 @@ public class pointA : MonoBehaviour {
 		isCollidePointA = true;
 		lines.SendMessage ("lineWhenPointA");
 		ani_raven1.SetTrigger ("fly");
+
+		source.PlayOneShot (au_22, 0.8f);
 	
 	}
 

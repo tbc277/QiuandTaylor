@@ -61,6 +61,11 @@ public class code_tree : MonoBehaviour {
 
 	SpriteRenderer sp_tree;
 
+	public AudioClip au_7;
+	public AudioClip au_8;
+
+	private AudioSource source;
+
 	void Start () 
 	{
 		
@@ -125,6 +130,8 @@ public class code_tree : MonoBehaviour {
 
 		sp_tree = this.GetComponent<SpriteRenderer> ();
 
+		source = this.GetComponent<AudioSource> ();
+
 	}
 
 	void Update ()
@@ -166,6 +173,9 @@ public class code_tree : MonoBehaviour {
 			ani_flyraven.SetTrigger ("flyraven");
 			step = 5.0f * Time.deltaTime;
 			lflyraven.transform.position = Vector3.MoveTowards(lflyraven.transform.position, lmark1.transform.position, step);
+
+			source.PlayOneShot (au_8, 0.8f);
+
 
 			//Destroy (shadowtear);
 			sr_shadowtear.enabled = false;
@@ -223,6 +233,8 @@ public class code_tree : MonoBehaviour {
 		//tear = Instantiate(Resources.Load("tree_tear")) as GameObject;
 		sp_tree.enabled = true;
 		Debug.Log ("tree Grow");
+
+		source.PlayOneShot (au_7, 0.8f);
 
 	}
 

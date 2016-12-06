@@ -10,6 +10,11 @@ public class girl : MonoBehaviour {
 	float currentTime;
 
 	Animator ani_girl;
+
+
+	public AudioClip au_22;
+
+	private AudioSource source;
 	void Start () 
 	{
 		x = transform.position.x;
@@ -19,6 +24,8 @@ public class girl : MonoBehaviour {
 		ani_girl= this.GetComponent<Animator> ();
 
 		currentTime = 0;
+
+		source = this.GetComponent<AudioSource> ();
 	}
 	
 
@@ -66,6 +73,8 @@ public class girl : MonoBehaviour {
 		{
 			//Debug.Log ("collide with Ball");
 			ani_girl.SetBool ("left", false);
+
+			source.PlayOneShot (au_22, 0.8f);
 
 		}
 	}

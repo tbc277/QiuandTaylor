@@ -18,6 +18,10 @@ public class door : MonoBehaviour {
 	GameObject terre_3;
 	SpriteRenderer sr_terre_3;
 
+	public AudioClip au_22;
+
+	private AudioSource source;
+
 	void Start () {
 
 		girl = GameObject.Find ("girl");
@@ -39,7 +43,9 @@ public class door : MonoBehaviour {
 		terre_3 = GameObject.Find ("terre_3");
 		sr_terre_3 = terre_3.GetComponent<SpriteRenderer> ();
 
+		source = this.GetComponent<AudioSource> ();
 
+		source.PlayOneShot (au_22, 0.8f);
 	}
 	
 
@@ -58,6 +64,8 @@ public class door : MonoBehaviour {
 		sr_terre_1.color = Color.black;
 		sr_terre_2.color = Color.black;
 		sr_terre_3.color = Color.black;
+
+
 
 		//destroy itself
 		Destroy (gameObject);

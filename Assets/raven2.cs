@@ -65,6 +65,9 @@ public class raven2 : MonoBehaviour {
 	Animator ani_grow_tear;
 
 	public AudioClip au_cry;
+	public AudioClip au_22;
+	public AudioClip au_5;
+	public AudioClip au_6;
 
 	private AudioSource source;
 
@@ -176,7 +179,7 @@ public class raven2 : MonoBehaviour {
 			ball.transform.position = Vector3.MoveTowards(ball.transform.position, placeCry,  5.0f * Time.deltaTime);
 			ani_ball.SetTrigger ("tear");
 
-			source.PlayOneShot (au_cry, 0.8f);
+			source.PlayOneShot (au_5, 0.8f);
 
 		}
 
@@ -219,6 +222,8 @@ public class raven2 : MonoBehaviour {
 
 			sr_tearless1.enabled = false;
 			sr_tearless2.enabled = false;
+
+			source.PlayOneShot (au_6, 0.8f);
 
 
 			if (t <= 1.0f)
