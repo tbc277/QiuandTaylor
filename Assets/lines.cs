@@ -39,59 +39,59 @@ public class lines : MonoBehaviour {
 		timeCounter += Time.deltaTime;
 		//Debug.Log ("timenow: " + timeCounter);
 	
-		if (timeCounter > 4.5f && timeCounter < 5.1f && !linePointA) 
-		{
-			t.text = " ";
-		}
-		if (timeCounter > 5.1f && timeCounter < 8.0f && !linePointA) 
-		{
-			t.text = "You are looking for something.";
-		}
-		if (timeCounter > 8.0f && timeCounter < 8.5f && !linePointA) 
-		{
-			t.text = " ";
-		}
-
-		if (timeCounter > 8.5f && timeCounter < 12.5f && !linePointA) 
-		{
-			t.text = "Perhaps you are looking for someone. ";
-		}
-		if (timeCounter > 12.5f && timeCounter < 14.0f && !linePointA) 
-		{
-			t.text = "Something. ";
-		}
-
-		if (timeCounter > 14.0f && timeCounter < 14.8f && !linePointA) 
-		{
-			t.text = " ";
-		}
-
-		else if (timeCounter > 14.8f && timeCounter < 16.5f && !linePointA) 
-		{
-			t.text = "A name, a place, a feeling. ";
-		}
-
-		if ( Mathf.Abs(ball.transform.position.x - v3Raven1.x) <1.0f  && !linePointA)
-		{
-			t.text = "Instead, you may find the raven.";
-			currentTime = timeCounter;
-			reachRaven1 = true;
-		}
-		if ((timeCounter - currentTime) > 2.0f &&  reachRaven1 && !linePointA) 
-		{
-			t.text = "It will appear in the darkest places. You were not looking for it, but it is there all the same.";
-		}
-
-		if ((timeCounter - currentTime) > 5.5f &&  reachRaven1 && !linePointA) 
-		{
-			t.text = "Unsummoned and unbidden.";
-		}
-
-		if (Mathf.Abs (currentTime2 - timeCounter) > 4.5f  && eatenSun) 
-		{
-			Debug.Log ("blank text! ");
-			t.text = " ";
-		}
+//		if (timeCounter > 4.5f && timeCounter < 5.1f && !linePointA) 
+//		{
+//			t.text = " ";
+//		}
+//		if (timeCounter > 5.1f && timeCounter < 8.0f && !linePointA) 
+//		{
+//			t.text = "You are looking for something.";
+//		}
+//		if (timeCounter > 8.0f && timeCounter < 8.5f && !linePointA) 
+//		{
+//			t.text = " ";
+//		}
+//
+//		if (timeCounter > 8.5f && timeCounter < 12.5f && !linePointA) 
+//		{
+//			t.text = "Perhaps you are looking for someone. ";
+//		}
+//		if (timeCounter > 12.5f && timeCounter < 14.0f && !linePointA) 
+//		{
+//			t.text = "Something. ";
+//		}
+//
+//		if (timeCounter > 14.0f && timeCounter < 14.8f && !linePointA) 
+//		{
+//			t.text = " ";
+//		}
+//
+//		else if (timeCounter > 14.8f && timeCounter < 16.5f && !linePointA) 
+//		{
+//			t.text = "A name, a place, a feeling. ";
+//		}
+//
+//		if ( Mathf.Abs(ball.transform.position.x - v3Raven1.x) <1.0f  && !linePointA)
+//		{
+//			t.text = "Instead, you may find the raven.";
+//			currentTime = timeCounter;
+//			reachRaven1 = true;
+//		}
+//		if ((timeCounter - currentTime) > 2.0f &&  reachRaven1 && !linePointA) 
+//		{
+//			t.text = "It will appear in the darkest places. You were not looking for it, but it is there all the same.";
+//		}
+//
+//		if ((timeCounter - currentTime) > 5.5f &&  reachRaven1 && !linePointA) 
+//		{
+//			t.text = "Unsummoned and unbidden.";
+//		}
+//
+//		if (Mathf.Abs (currentTime2 - timeCounter) > 4.5f  && eatenSun) 
+//		{
+//			Debug.Log ("blank text! ");
+//			t.text = " ";
+//		}
 
 	}
 

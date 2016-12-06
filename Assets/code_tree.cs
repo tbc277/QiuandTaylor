@@ -174,7 +174,7 @@ public class code_tree : MonoBehaviour {
 			step = 5.0f * Time.deltaTime;
 			lflyraven.transform.position = Vector3.MoveTowards(lflyraven.transform.position, lmark1.transform.position, step);
 
-			source.PlayOneShot (au_8, 0.8f);
+			//source.PlayOneShot (au_8, 0.8f);
 
 
 			//Destroy (shadowtear);
