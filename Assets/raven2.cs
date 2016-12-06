@@ -57,6 +57,13 @@ public class raven2 : MonoBehaviour {
 	SpriteRenderer sr_tearless1;
 	SpriteRenderer sr_tearless2;
 
+	Vector3 placeCry;
+
+	GameObject lgrow_tear;
+	SpriteRenderer sr_grow_tear;
+
+	Animator ani_grow_tear;
+
 	void Start () {
 
 		ani_raven2 = this.GetComponent<Animator> ();
@@ -113,6 +120,15 @@ public class raven2 : MonoBehaviour {
 
 		sr_tearless1 = ltearless1.GetComponent<SpriteRenderer> ();
 		sr_tearless2 = ltearless2.GetComponent<SpriteRenderer> ();
+
+		placeCry = new Vector3 (112.6f, -10.5f,0);
+
+		lgrow_tear = GameObject.Find ("grow_tear");
+
+		sr_grow_tear = lgrow_tear.GetComponent<SpriteRenderer> ();
+		sr_grow_tear.enabled = false;
+
+		ani_grow_tear = lgrow_tear.GetComponent<Animator> ();
 	}
 	
 
@@ -150,18 +166,28 @@ public class raven2 : MonoBehaviour {
 
 		if ((timeCounter - currentTime) > 1.0f && is35) 
 		{
+			
+			ball.transform.position = Vector3.MoveTowards(ball.transform.position, placeCry,  5.0f * Time.deltaTime);
 			ani_ball.SetTrigger ("tear");
+
+
 		}
 
 		if ((timeCounter - currentTime) > 3.0f && is35)
 		{
-
-
         //play cry animation
 			sr_raven2.enabled = false;
 		   //Destroy (gameObject);
 
+
 		}
+
+		if ((timeCounter - currentTime) > 5.0f && is35) 
+		{
+			sr_grow_tear.enabled = true;
+			ani_grow_tear.SetTrigger ("grow");
+		}
+
 
 		if ((timeCounter - currentTime) > 7.0f && is35)
 		{
