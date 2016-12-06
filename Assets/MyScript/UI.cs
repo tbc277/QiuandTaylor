@@ -15,6 +15,6 @@ public class UI : MonoBehaviour {
 
 	public void OnClickA(){
 		Debug.Log ("Click");
-		SceneManager
+
 	}
 }
