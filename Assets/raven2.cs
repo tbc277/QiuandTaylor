@@ -32,6 +32,8 @@ public class raven2 : MonoBehaviour {
 	GameObject ltree;
 	GameObject ptree;
 
+	SpriteRenderer sp_tree;
+
 	bool isGenerateTree;
 	bool isBiggerEnough;
 
@@ -47,6 +49,8 @@ public class raven2 : MonoBehaviour {
 	SpriteRenderer sr_o2;
 	GameObject o3;
 	SpriteRenderer sr_o3;
+
+
 
 
 	void Start () {
@@ -93,6 +97,10 @@ public class raven2 : MonoBehaviour {
 		sr_o2= o2.GetComponent<SpriteRenderer> ();
 		o3 = GameObject.Find ("o3");
 		sr_o3= o3.GetComponent<SpriteRenderer> ();
+
+		sp_tree = ltree.GetComponent<SpriteRenderer> ();
+
+		sp_tree.enabled = false;
 
 	}
 	
@@ -147,6 +155,16 @@ public class raven2 : MonoBehaviour {
 
 			rb_ball.isKinematic = false;
 			ball.transform.position = new Vector3 (113.0f, -12.0f, 0);
+
+			sr_terre_1.enabled = false;
+			//sr_terre_2.enabled = false;
+			sr_terre_3.enabled = false;
+			sr_o1.enabled = false;
+			sr_o2.enabled = false;
+			sr_o3.enabled = false;
+
+			sr_terre_2.color = Color.white;
+			sr_terre_2.enabled = true;
 
 			if (t <= 1.0f)
 			{

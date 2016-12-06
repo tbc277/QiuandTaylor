@@ -17,6 +17,8 @@ public class pointA : MonoBehaviour {
 
 	GameObject lines;
 
+	Animator ani_raven1;
+
 	void Start () 
 	{
 		sun = GameObject.Find ("sun");
@@ -28,6 +30,7 @@ public class pointA : MonoBehaviour {
 		isCollidePointA = false;
 
 		ani_sun = sun.GetComponent<Animator> ();
+		ani_raven1 = raven1.GetComponent<Animator> ();
 
 		lines = GameObject.Find ("lines");
 	}
@@ -71,6 +74,7 @@ public class pointA : MonoBehaviour {
 
 		isCollidePointA = true;
 		lines.SendMessage ("lineWhenPointA");
+		ani_raven1.SetTrigger ("fly");
 	
 	}
 

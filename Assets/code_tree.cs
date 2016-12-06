@@ -59,6 +59,8 @@ public class code_tree : MonoBehaviour {
 	float step;
 	GameObject lmark1;
 
+	SpriteRenderer sp_tree;
+
 	void Start () 
 	{
 		
@@ -82,7 +84,7 @@ public class code_tree : MonoBehaviour {
 		//Debug.Log ("v3: "+ startV3ShadowTear);
 
 		currentShadowTear_y = 10.0f; 
-		lengthRole = 0.5f;// equals the length of the role;
+		lengthRole = 5.5f;// equals the length of the role;
 
 		cam = GameObject.Find ("Main Camera");
 		camera = cam.GetComponent<Camera>();
@@ -120,6 +122,8 @@ public class code_tree : MonoBehaviour {
 		sr_flayraven.enabled = false;
 
 		lmark1 = GameObject.Find ("mark1");
+
+		sp_tree = this.GetComponent<SpriteRenderer> ();
 
 	}
 
@@ -180,7 +184,7 @@ public class code_tree : MonoBehaviour {
 		if ((timeCounter - teardropBegin) >1.5f && isFirstTearDrop   && ranTear1 == 3 && !isTearTimeOver)  
 		{						
 			tear = Instantiate(Resources.Load("tree_tear")) as GameObject;
-			tear.transform.position = new Vector3 (112.0f, -4.2f,0);
+			tear.transform.position = new Vector3 (112.0f, -5.7f,0);
 	
 			Debug.Log ("tree is crying!");
 		}
@@ -188,12 +192,12 @@ public class code_tree : MonoBehaviour {
 		if ((timeCounter - teardropBegin) >1.5f && isFirstTearDrop   && ranTear2 == 3 && !isTearTimeOver)
 		{
 			tear = Instantiate(Resources.Load("tree_tear")) as GameObject;
-			tear.transform.position = new Vector3 (110.0f, -4.2f,0);
+			tear.transform.position = new Vector3 (110.0f, -5.96f,0);
 		}
 		if ((timeCounter - teardropBegin) >1.5f && isFirstTearDrop   && ranTear3 == 3 && !isTearTimeOver)
 		{
 			tear = Instantiate(Resources.Load("tree_tear")) as GameObject;
-			tear.transform.position = new Vector3 (114.0f, -4.2f,0);
+			tear.transform.position = new Vector3 (114.0f, -5.2f,0);
 		}
 
 //Destroy the tears!
@@ -217,8 +221,9 @@ public class code_tree : MonoBehaviour {
 		ani_treeGrow.SetTrigger ("treegrow");
 		//initiate tears
 		//tear = Instantiate(Resources.Load("tree_tear")) as GameObject;
-
+		sp_tree.enabled = true;
 		Debug.Log ("tree Grow");
+
 	}
 
 	void OnCollisionEnter2D(Collision2D col)

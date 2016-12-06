@@ -3,7 +3,7 @@
 /// <summary>
 /// Title screen script
 /// </summary>
-public class RestartScript : MonoBehaviour
+public class Reload : MonoBehaviour
 {
 	public void StartGame()
 	{
