@@ -50,8 +50,12 @@ public class raven2 : MonoBehaviour {
 	GameObject o3;
 	SpriteRenderer sr_o3;
 
+	Animator ani_ball;
 
-
+	GameObject ltearless1;
+	GameObject ltearless2;
+	SpriteRenderer sr_tearless1;
+	SpriteRenderer sr_tearless2;
 
 	void Start () {
 
@@ -102,6 +106,13 @@ public class raven2 : MonoBehaviour {
 
 		sp_tree.enabled = false;
 
+		ani_ball = ball.GetComponent<Animator> ();
+
+		ltearless1 = GameObject.Find ("tearless1");
+		ltearless2 = GameObject.Find ("tearless2");
+
+		sr_tearless1 = ltearless1.GetComponent<SpriteRenderer> ();
+		sr_tearless2 = ltearless2.GetComponent<SpriteRenderer> ();
 	}
 	
 
@@ -133,7 +144,13 @@ public class raven2 : MonoBehaviour {
 			//Destroy (room);
 			sr_room.enabled = false;
 
+
 			is35 = true;
+		}
+
+		if ((timeCounter - currentTime) > 1.0f && is35) 
+		{
+			ani_ball.SetTrigger ("tear");
 		}
 
 		if ((timeCounter - currentTime) > 3.0f && is35)
@@ -143,6 +160,7 @@ public class raven2 : MonoBehaviour {
         //play cry animation
 			sr_raven2.enabled = false;
 		   //Destroy (gameObject);
+
 		}
 
 		if ((timeCounter - currentTime) > 7.0f && is35)
@@ -166,6 +184,10 @@ public class raven2 : MonoBehaviour {
 			sr_terre_2.color = Color.white;
 			sr_terre_2.enabled = true;
 
+			sr_tearless1.enabled = false;
+			sr_tearless2.enabled = false;
+
+
 			if (t <= 1.0f)
 			{
 				t += 0.05f;
@@ -175,6 +197,7 @@ public class raven2 : MonoBehaviour {
 			//camera.backgroundColor = color2;
 
 			raven_3.SendMessage ("appear");
+
 
 
 		}
