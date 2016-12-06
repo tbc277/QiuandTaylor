@@ -64,6 +64,10 @@ public class raven2 : MonoBehaviour {
 
 	Animator ani_grow_tear;
 
+	public AudioClip au_cry;
+
+	private AudioSource source;
+
 	void Start () {
 
 		ani_raven2 = this.GetComponent<Animator> ();
@@ -129,6 +133,8 @@ public class raven2 : MonoBehaviour {
 		sr_grow_tear.enabled = false;
 
 		ani_grow_tear = lgrow_tear.GetComponent<Animator> ();
+
+		source = this.GetComponent<AudioSource> ();
 	}
 	
 
@@ -170,6 +176,7 @@ public class raven2 : MonoBehaviour {
 			ball.transform.position = Vector3.MoveTowards(ball.transform.position, placeCry,  5.0f * Time.deltaTime);
 			ani_ball.SetTrigger ("tear");
 
+			source.PlayOneShot (au_cry, 0.8f);
 
 		}
 
